@@ -2,40 +2,58 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  font-family: 'Segoe UI' sans-serif,
 }
 
 .main-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
 .title {
   text-align: center;
-  margin: 0;
-  font-size: 8em;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  font-size: 3rem;
   font-family: "Helvetica";
-  font-weight: normal;
+  font-weight: bold;
   color: white;
 }
 
 #card-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  overflow-y: auto;
+  max-height: 80vh;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .card {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 1rem;
+  border: 1px solid #3a3a50;
+  border-radius: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 5px;
+  background-color: #2a2a40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.2);
 }
 
 .card-content {
   padding: 20px;
   font-family: "Verdana";
   color: #777;
+  min-height: 48px;
 }
 
 .card-content h2 {
@@ -44,20 +62,15 @@ body {
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
 }
 
 button {
   text-align: center;
-  background-color: #666;
   border: none;
   padding-left: 10px;
   padding-right: 10px;
@@ -67,4 +80,75 @@ button {
   font-size: 22px;
   cursor: pointer;
   margin: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.sort-button {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #eee;
+  border-radius: 999px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sort-button:hover {
+  background: #ddd;
+}
+
+.popup-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+  background-color: #2a2a40;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 10% auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff5f57;
+}
+
+.popup-btn {
+  width: 100%;
+  display: block;
+  margin: 10px auto 0 auto;
+  background-color: #ff5f57;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.popup-btn:hover {
+  background-color: #e04444;
 }
