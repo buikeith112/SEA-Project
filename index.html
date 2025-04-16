@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Top 50 Lifetime Grossing Movies</title>
+    <meta name="description" content="A Catalog of the Top 50 Lifetime Grossing Movies" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">Top 50 Lifetime Grossing Movies</h1>
     </header>
+    <div class="buttons">
+      <button class="sort-button" onclick="sortByGross()">Sort by Gross</button>
+      <button class="sort-button" onclick="sortByYear()">Sort by Year</button>
+      <button class="sort-button" onclick="sortByName()">Sort by Name</button>
+    </div>
     <div id="card-container"></div>
     <div class="card" style="display: none">
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+        <h2>Movie Title</h2>
+        <img src="" alt="Movie Poster" />
+        <p>Lifetime Gross</p>
+        <button class="popup-btn" onclick="openModal(this)">More Info</button>
+      </div>
+
+      <div class="popup-modal">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closeModal(this)">&times;</span>
+          <h2>Movie Title.</h2>
+          <p>Description of movie.</p>
+        </div>
       </div>
     </div>
-    <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
     </div>
   </body>
 </html>
